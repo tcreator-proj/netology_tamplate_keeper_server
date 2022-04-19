@@ -34,6 +34,7 @@
       "log4js": "^6.4.5",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.13",
+      "routing-controllers": "^0.9.0",
       "typeorm": "0.3.6"
    },
    "homepage": "https://github.com/tcreator-proj/netology_tamplate_keeper_server#readme"
