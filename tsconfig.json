@@ -1,14 +1,15 @@
 {
-    "compilerOptions": {
-        "esModuleInterop": true,
-      "outDir": "./build/",
-      "baseUrl": ".",
-      "noImplicitAny": true,
-      "module": "es6",
+   "compilerOptions": {
+      "lib": [
+         "es5",
+         "es6"
+      ],
       "target": "es5",
-      "allowJs": true,
+      "module": "commonjs",
       "moduleResolution": "node",
-      "allowSyntheticDefaultImports": true,
+      "outDir": "./build",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
       "sourceMap": true
-    }
-  }
+   }
+}

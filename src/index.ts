@@ -1,20 +1,20 @@
-const express = require('express');
-const log4js = require('log4js');
-const logger = log4js.getLogger();
-logger.level = process.env.LOG_LEVEL;
+import { AppDataSource } from "./data-source"
+import { Expert } from "./entity/Expert"
 
+AppDataSource.initialize().then(async () => {
 
-const app = express(); 
-const port: number = 4000;
+    console.log("Inserting a new user into the database...")
+    const user = new Expert()
+    user.firstName = "Timber"
+    user.lastName = "Saw"
+    user.age = 25
+    await AppDataSource.manager.save(user)
+    console.log("Saved a new user with id: " + user.id)
 
-logger.info('log4js log info');
-logger.debug('log4js log debug');
-logger.error('log4js log error');
+    console.log("Loading users from the database...")
+    const users = await AppDataSource.manager.find(User)
+    console.log("Loaded users: ", users)
 
-app.get('/', (request: any, response: any) => {
-    response.send("Hello, World");
-})
+    console.log("Here you can setup and run express / fastify / any other framework.")
 
-app.listen(port, () => {
-    console.log("There is server")
-})
+}).catch(error => console.log(error))

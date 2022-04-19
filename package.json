@@ -1,33 +1,40 @@
 {
-  "name": "netology_tamplate_keeper_server",
-  "version": "1.0.0",
-  "description": "Server for web extention Netology Tamplate Keeper",
-  "main": "index.js",
-  "scripts": {
-    "test": "",
-    "build": "tsc",
-    "start": "node ./build/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tcreator-proj/netology_tamplate_keeper_server.git"
-  },
-  "author": "Hiro Protagonist <hiro@showcrash.io> (http://hiro.snowcrash.io)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tcreator-proj/netology_tamplate_keeper_server/issues"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.13",
-    "babel-loader": "^8.1.0",
-    "ts-loader": "^8.2.0",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.6.3"
-  },
-  "dependencies": {
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
-    "log4js": "^6.4.5"
-  },
-  "homepage": "https://github.com/tcreator-proj/netology_tamplate_keeper_server#readme"
+   "name": "netology_tamplate_keeper_server",
+   "version": "1.0.0",
+   "description": "Server for web extention Netology Tamplate Keeper",
+   "main": "index.js",
+   "scripts": {
+      "test": "",
+      "build": "tsc",
+      "start": "ts-node src/index.ts",
+      "typeorm": "typeorm-ts-node-commonjs"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/tcreator-proj/netology_tamplate_keeper_server.git"
+   },
+   "author": "Hiro Protagonist <hiro@showcrash.io> (http://hiro.snowcrash.io)",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/tcreator-proj/netology_tamplate_keeper_server/issues"
+   },
+   "devDependencies": {
+      "@types/express": "^4.17.13",
+      "@types/node": "^16.11.10",
+      "babel-loader": "^8.1.0",
+      "ts-loader": "^8.2.0",
+      "ts-node-dev": "^1.1.8",
+      "typescript": "4.5.2",
+      "ts-node": "10.7.0"
+   },
+   "dependencies": {
+      "@org-formation/tombok": "0.0.1",
+      "dotenv": "^16.0.0",
+      "express": "^4.17.3",
+      "log4js": "^6.4.5",
+      "pg": "^8.4.0",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.3.6"
+   },
+   "homepage": "https://github.com/tcreator-proj/netology_tamplate_keeper_server#readme"
 }
