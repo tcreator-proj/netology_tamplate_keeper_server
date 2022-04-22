@@ -1,8 +1,6 @@
 import { Entity, PrimaryColumn, Column } from "typeorm"
 
-@Entity({
-    schema: "netology_keeper"
-})
+@Entity()
 export class Expert {
 
     @PrimaryColumn()
