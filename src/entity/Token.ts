@@ -10,13 +10,19 @@ export class Token {
     @Column()
     email: string
 
-    @Column("token_key")
+    @Column({
+        name: "token_key"
+    })
     tokenKey: string
 
-    @Column("token_value")
+    @Column({
+        name: "token_value"
+    })
     tokenValue: string
 
-    @Column("task_name")
+    @Column({
+        name: "task_name"
+    })
     taskName: string
 
     @Column({

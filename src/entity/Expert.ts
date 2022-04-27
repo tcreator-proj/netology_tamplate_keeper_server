@@ -6,7 +6,9 @@ export class Expert {
     @PrimaryColumn()
     email: string
 
-    @Column("first_name")
+    @Column({
+        name: "first_name"
+    })
     firstName: string
 
     @Column()
