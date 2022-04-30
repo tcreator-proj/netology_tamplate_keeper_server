@@ -7,7 +7,8 @@ const port: number = 3000;
 
 AppDataSource.initialize().then( async () => {
   const app = createExpressServer({
-    controllers: [TokenController, ExpertController],  
+    controllers: [TokenController, ExpertController],
+    cors: ["https://netology.ru", "http://localhost:3000"]
   });
   app.listen(port);
 })

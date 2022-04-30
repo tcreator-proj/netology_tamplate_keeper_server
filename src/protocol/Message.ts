@@ -8,6 +8,6 @@ export type Message = {
 
 type Data = {
     email: string,
-    taskName: string,
+    taskName?: string,
     scope: Scope
 }
