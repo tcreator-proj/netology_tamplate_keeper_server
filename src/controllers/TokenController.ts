@@ -1,14 +1,19 @@
-import { Controller, Get } from 'routing-controllers';
-import { Token } from '../entity/Token';
-import TokenRepository from '../repository/TokenRepository';
+import { Request, Response } from 'express';
+import { Controller, Get, QueryParam, Req, Res, JsonController } from 'routing-controllers';
+import { Scope } from '../enums/Scope';
 
-@Controller()
+@JsonController()
 export class TokenController {
 
-  @Get('/api/tokens')
-  async getAll() {
-    const tokenRepository: TokenRepository = new TokenRepository();
-    const all: Token[] = await tokenRepository.getAll();
-    return all;
+  @Get('/api/token/')
+  async getAllTokensByTask(
+    @QueryParam("expert") expert: string, 
+    @QueryParam("taskname") taskName: string,
+    @QueryParam("scope") scope: Scope, 
+    @Req() request: Request,
+    @Res() response: Response
+  ) {
+    console.log(taskName, scope, expert)
+
   }
 }

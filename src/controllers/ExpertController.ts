@@ -1,14 +1,22 @@
-// import { Controller, Get, Param } from 'routing-controllers';
-// import { Expert } from '../entity/Expert';
-// import ExpertRepository from '../repository/ExpertRepository';
+import { Request, Response } from 'express';
+import { Body, JsonController, Get, HttpCode, Param, Req, Res } from 'routing-controllers';
+import { ExpertOperations } from '../b_logic/ExpertOperations';
+import { Message } from '../protocol/Message';
 
-// @Controller()
-// export class ExpertController {
+@JsonController()
+export class ExpertController {
 
-//   @Get('/api/expert/:email')
-//   async getExpert(@Param('email') email: string) {
-//     const expertRepository: ExpertRepository = new ExpertRepository();
-//     const expert: Expert = await expertRepository.getExpert(email);
-//     return expert;
-//   }
-// }
+  @Get('/api/expert/:email')
+  @HttpCode(200)
+  async getExpert(
+    @Param('email') email: string,
+    @Req() request: Request
+    ) {
+    const expertOperations: ExpertOperations = new ExpertOperations();
+    const message: Message = {
+        method: request.method,
+        result: await expertOperations.hasExpertToBase(email)
+    }
+    return message;
+  }
+}

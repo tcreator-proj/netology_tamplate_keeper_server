@@ -3,7 +3,7 @@ import { AppDataSource } from "../data-source";
 import { Token } from "../entity/Token";
 
 
-export default class TokenRepository {
+class TokenRepository {
     private expertRepository: Repository<Token>;
     constructor() {
         this.expertRepository = AppDataSource.getRepository(Token);
@@ -14,3 +14,5 @@ export default class TokenRepository {
         return expert;
     }
 }
+
+export const tokenRepository: TokenRepository = new TokenRepository();

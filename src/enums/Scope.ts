@@ -1,4 +1,4 @@
-export enum Visible {
+export enum Scope {
     GLOBAL = "global",
     LOCAL = "local"
 }

@@ -1,8 +1,7 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../data-source";
 import {Expert} from "../entity/Expert";
-
-export default class ExpertRepository {
+class ExpertRepository {
     private expertRepository: Repository<Expert>;
     constructor() {
         this.expertRepository = AppDataSource.getRepository(Expert);
@@ -18,3 +17,6 @@ export default class ExpertRepository {
         return expert;
     }
 }
+
+export const expertRepository: ExpertRepository = new ExpertRepository();
+

@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
-import { Visible } from "./Visible"
+import { Scope } from "../enums/Scope"
 
 @Entity()
 export class Token {
@@ -27,11 +27,11 @@ export class Token {
 
     @Column({
         type: "enum",
-        enum: Visible,
-        default: Visible.LOCAL,
+        enum: Scope,
+        default: Scope.LOCAL,
         name: "var_visiblity"
     })
-    varVisiblity: Visible
+    varVisiblity: Scope
 
     @Column()
     deleted: boolean

@@ -7,7 +7,7 @@ const port: number = 3000;
 
 AppDataSource.initialize().then( async () => {
   const app = createExpressServer({
-    controllers: [ExpertController, TokenController],  
+    controllers: [TokenController, ExpertController],  
   });
   app.listen(port);
 })
